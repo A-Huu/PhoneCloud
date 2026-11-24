@@ -1,0 +1,49 @@
+# Python
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.pytest_cache/
+
+# PyInstaller。图标和 spec 每次打包重新生成，spec 里还有本机临时路径
+build/
+dist/
+*.spec
+*.manifest
+
+# 在仓库目录里运行或双击 exe 时落下的文件
+.devhome/
+/accounts/
+/data/
+/config.json
+/PhoneCloud.html
+*.lnk
+*.exe
+*.db
+*.db-wal
+*.db-shm
+*.log
+*.pid
+*.bak
+.env
+.env.*
+
+# 本地设计记录，用法以 README 和快速使用为准
+docs/
+
+# 编辑器与系统
+.idea/
+.vscode/
+.cursor/
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
