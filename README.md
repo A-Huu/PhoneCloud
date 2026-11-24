@@ -9,18 +9,14 @@
 
 ```mermaid
 flowchart LR
-  phone["手机浏览器"] -->|"同一 Wi-Fi"| pc["家里的 Windows 电脑"]
-  pc --> files["磁盘上的照片和视频"]
+  phone(["手机浏览器"]) --> wifi(["家里 Wi-Fi"]) --> pc(["家里电脑"]) --> files(["磁盘文件"])
 ```
 
 电脑保持开机。双击 `phonecloud.exe` 在后台启动并打开管理页；已经在运行就只打开页面。第一次运行会在旁边生成「重新启动」和「停止」。启动失败才会弹出提示。
 
 ```mermaid
-flowchart TD
-  open["双击 phonecloud.exe"] --> admin["只在这台电脑上创建管理员"]
-  admin --> family["给家人建账号和文件夹"]
-  family --> qr["手机扫管理页上的二维码"]
-  qr --> use["用浏览器看、传、下载"]
+flowchart LR
+  open(["双击程序"]) --> admin(["创建管理员"]) --> family(["建立账号"]) --> qr(["扫描二维码"]) --> use(["开始使用"])
 ```
 
 ## 文件夹
@@ -31,12 +27,10 @@ flowchart TD
 | 个人 | `accounts\<账号>\<名字>` | 只有主人。其他人默认可看 |
 
 ```mermaid
-flowchart TD
-  pick["打开一个文件夹"] --> kind{"共享还是个人"}
-  kind -->|共享| share["看得到的人都能上传"]
-  kind -->|个人| who{"是不是主人"}
-  who -->|主人| mine["可以上传"]
-  who -->|其他人| look["默认可看"]
+flowchart LR
+  share(["共享"]) --> shareDo(["看得到就能传"])
+  personal(["个人"]) --> owner(["主人能传"])
+  personal --> guest(["其他人可看"])
 ```
 
 在管理页「空间」里点「谁可以看」：保持所有人，或改成只让勾选的人看。主人始终看得到自己的个人文件夹。同名文件存成 `IMG_001_1.jpg`。删除的文件进电脑回收站。一次可以选多个文件，或选整个文件夹。
